@@ -1,0 +1,12 @@
+services:
+  raccoon-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: raccoon-server:latest
+    container_name: raccoon-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
